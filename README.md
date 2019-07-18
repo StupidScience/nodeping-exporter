@@ -21,3 +21,15 @@ Exporter listen on tcp-port **9503**. Metrics available on `/metrics` path.
 |---|---|---|
 |nodeping_check_up|label, target, type|Current check status: 1 - for up, 0 - for down|
 |nodeping_check_duration_seconds|label, target, type|Last check duration in seconds|
+
+## Run via Docker
+
+The latest release is automatically published to the [Docker registry](https://hub.docker.com/r/stupidscience/nodeping-exporter).
+
+You can run it like this:
+```
+$ docker run -d --name nodeping-exporter \
+            -e NODEPING_TOKEN=12345abcdef \
+            -p 9503:9503 \
+            stupidscience/nodeping-exporter
+```
